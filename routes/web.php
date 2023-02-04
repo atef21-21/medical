@@ -52,6 +52,7 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::post('logout/patient', [PatientController::class, 'logout'])->name('logout');
 
     Route::get('patient-profile', [PatientController::class, 'patientProfileForm'])->name('patient.profile');
+    Route::post('Upload/Biopsy/Image', [PatientController::class, 'uploadBiopsyImage'])->name('change.biopsy');
 
 
 });
