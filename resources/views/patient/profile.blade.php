@@ -83,7 +83,9 @@
                 </h2>
                 <h2>ISUP Grade:
 
-                    <span> {{!empty(auth()->user()->psa_result)? auth()->user()->psa_result . '/5' : 'You should upload biopsy first'  }} </span>
+                    <span>
+                        {{!empty(auth()->user()->psa_result) || auth()->user()->psa_result == 0 ? auth()->user()->psa_result . '/5' : 'You should upload biopsy first'  }}
+                    </span>
                 </h2>
                 </h2>
                 <a href="#" class="btn"> update profile <span class="fas fa-chevron-right"></span> </a>

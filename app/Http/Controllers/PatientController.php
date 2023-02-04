@@ -32,7 +32,7 @@ class PatientController extends Controller
     public function uploadBiopsyImage(Request $request)
     {
         $validator = Validator::make($request->all(),[
-            'biopsy' => 'required|mimes:jpeg,jpg,png,gif',
+            'biopsy' => 'required|mimes:jpeg,jpg,png,gif|max:10000',
         ]);
         if ($validator->fails() ) {
             return redirect()->back()->withErrors($validator)->withInput();
